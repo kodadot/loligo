@@ -18,7 +18,6 @@ type CollectionEntity @entity {
   nfts: [NFTEntity!] @derivedFrom(field: "collection")
   ownerCount: Int!
   supply: Int!
-  type: CollectionType!
   updatedAt: DateTime!
   volume: BigInt!
 }
@@ -38,7 +37,6 @@ type NFTEntity @entity {
   meta: MetadataEntity
   metadata: String
   name: String @index
-  offers: [Offer!] @derivedFrom(field: "nft")
   price: BigInt
   recipient: String
   royalty: Float

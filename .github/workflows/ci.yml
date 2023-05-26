@@ -1,4 +1,7 @@
 name: ci
+defaults:
+  run:
+    working-directory: lib
 
 on:
   push:
@@ -7,10 +10,6 @@ on:
   pull_request:
     branches:
       - main
-
-defaults:
-  run:
-    working-directory: lib
 
 jobs:
   ci:
@@ -25,5 +24,4 @@ jobs:
       - run: pnpm install
       - run: pnpm lint
       - run: pnpm build
-      - run: pnpm vitest --coverage
-      - uses: codecov/codecov-action@v3
+

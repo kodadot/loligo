@@ -8,6 +8,10 @@ on:
     branches:
       - main
 
+defaults:
+  run:
+    working-directory: lib
+
 jobs:
   ci:
     runs-on: ubuntu-latest

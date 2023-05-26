@@ -1,7 +1,4 @@
 name: ci
-defaults:
-  run:
-    working-directory: lib
 
 on:
   push:
@@ -21,6 +18,7 @@ jobs:
         with:
           node-version: 18
           cache: "pnpm"
+          cache-dependency-path: "lib/pnpm-lock.yaml"
       - run: pnpm install
       - run: pnpm lint
       - run: pnpm build

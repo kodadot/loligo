@@ -1,3 +1,3 @@
 export function isLewd() {
-  return true
+  return true;
 }

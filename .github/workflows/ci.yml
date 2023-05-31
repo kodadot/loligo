@@ -17,11 +17,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: corepack enable
-      - run: ls -R
       - uses: actions/setup-node@v3   
         with:
           node-version: 18
           cache: "pnpm"
+          cache-dependency-path: "./lib/pnpm-lock.yaml"
       - run: pnpm install
       - run: pnpm lint
       - run: pnpm build

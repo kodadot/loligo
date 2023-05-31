@@ -13,11 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: lib
+        working-directory: ./lib
     steps:
       - uses: actions/checkout@v3
       - run: corepack enable
-      - uses: actions/setup-node@v3
+      - run: ls -R
+      - uses: actions/setup-node@v3   
         with:
           node-version: 18
           cache: "pnpm"
